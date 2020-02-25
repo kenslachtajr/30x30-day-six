@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="col-50">
+    <shoes-shoes-list
+    [shoes]="shoe$ | async"
+    (selected)="selectShoe($event)"
+    (deleted)="deleteShoe($event)"
+    >
+  </shoes-shoes-list>
+  </div>
+
+  <div class="col-50">
+    <shoes-shoes-details
+    [form]="form"
+    [shoe]="selectedShoe"
+    (saved)="saveShoe()"
+    (cancelled)="cancel()"
+    >
+  </shoes-shoes-details>
+  </div>
+</div>
